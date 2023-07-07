@@ -8,15 +8,27 @@ namespace Script
         /// <summary>
         /// Load a level, you can also reload a level from here
         /// </summary>
-        /// <param name="level">Set here the level numbers</param>
-        public void StartLevel(int level)
+        public void StartNextLevel()
         {
-            SceneManager.LoadScene(level);
+            UpdateLevelsUnlocked();
+            if (SceneManager.GetActiveScene().buildIndex > SceneManager.sceneCountInBuildSettings)
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            else SceneManager.LoadScene(0);
+        }
+
+        public void RestartLevel()
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void GoToMainMenu()
         {
             SceneManager.LoadScene(0);
+        }
+
+        private void UpdateLevelsUnlocked()
+        {
+            PlayerPrefs.SetInt("LevelsDone", SceneManager.GetActiveScene().buildIndex);
         }
     }
 }
