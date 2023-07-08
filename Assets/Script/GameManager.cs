@@ -6,6 +6,8 @@ namespace Script
     public class GameManager : MonoBehaviour
     {
         [SerializeField] private MusicManager musicManager;
+        [SerializeField] private GameObject winCanvas;
+        [SerializeField] private GameObject lostCanvas;
         
         private void Awake()
         {
@@ -25,12 +27,14 @@ namespace Script
         public void WinGame()
         {
             //TODO show win UI
-            musicManager.PlayBaseOnly();
+            winCanvas.SetActive(true);
+            // musicManager.PlayBaseOnly();
         }
 
         public void LostGame()
         {
             //TODO show lost UI
+            lostCanvas.SetActive(true);
             musicManager.PlayBaseOnly();
         }
     }

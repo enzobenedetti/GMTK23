@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -5,6 +6,10 @@ namespace Script
 {
     public class LevelManager : MonoBehaviour
     {
+        [SerializeField] private Animator curtainAnimator;
+        [SerializeField] private float animationDelay;
+        private static readonly int Close = Animator.StringToHash("Close");
+
         /// <summary>
         /// Load the next level
         /// </summary>
@@ -12,23 +17,35 @@ namespace Script
         {
             UpdateLevelsUnlocked();
             if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings)
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
-            else SceneManager.LoadScene(0);
+                LoadSceneWithAnimation(SceneManager.GetActiveScene().buildIndex + 1);
+            else LoadSceneWithAnimation(0);
         }
 
         public void RestartLevel()
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            LoadSceneWithAnimation(SceneManager.GetActiveScene().buildIndex);
         }
 
         public void GoToMainMenu()
         {
-            SceneManager.LoadScene(0);
+            LoadSceneWithAnimation(0);
         }
 
         private void UpdateLevelsUnlocked()
         {
             PlayerPrefs.SetInt("LevelsDone", SceneManager.GetActiveScene().buildIndex);
+        }
+
+        private void LoadSceneWithAnimation(int index)
+        {
+            curtainAnimator.SetTrigger(Close);
+            StartCoroutine(LoadSceneWithDelay(index, animationDelay));
+        }
+
+        private static IEnumerator LoadSceneWithDelay(int index, float delay)
+        {
+            yield return new WaitForSeconds(delay);
+            SceneManager.LoadScene(index);
         }
     }
 }
