@@ -32629,8 +32629,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b58e44ac53a40c69bd1e464c3c08729, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameManager: {fileID: 0}
-  levelManager: {fileID: 0}
   winCanvas: {fileID: 1429091641}
   lostCanvas: {fileID: 895038256}
   curtain: {fileID: 949806719}

@@ -39,13 +39,15 @@ public class Hole : MonoBehaviour
     private void FixedUpdate()
     {
         if (!FindObjectOfType<BallMovement>()) return;
+        if (!FindObjectOfType<BallMovement>().isOnPlay) return;
         _rigidbody2D.MovePosition(_rigidbody2D.position + _moveDir.normalized * (speed * Time.fixedDeltaTime));
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnTriggerStay2D(Collider2D other)
     {
         if (other.gameObject.CompareTag("Ball"))
         {
+            if (!other.transform.GetComponent<BallMovement>().onGround) return;
             other.gameObject.SetActive(false);
             GetComponentInChildren<ParticleSystem>().Play();
             _gameManager.WinGame();

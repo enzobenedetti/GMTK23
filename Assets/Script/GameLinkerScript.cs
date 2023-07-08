@@ -10,20 +10,10 @@ namespace Script
     /// </summary>
     public class GameLinkerScript : MonoBehaviour
     {
-        [HideInInspector]
-        public GameManager gameManager;
-        [HideInInspector]public LevelManager levelManager;
 
         public GameObject winCanvas;
         public GameObject lostCanvas;
         public Animator curtain;
-        
-        
-        private void Start()
-        {
-            gameManager = FindObjectOfType<GameManager>();
-            levelManager = FindObjectOfType<LevelManager>();
-        }
 
         public void CallNextLevel()
         {
@@ -32,12 +22,12 @@ namespace Script
 
         public void CallRestartLevel()
         {
-            levelManager.RestartLevel();
+            FindObjectOfType<LevelManager>().RestartLevel();
         }
 
         public void CallMainMenu()
         {
-            levelManager.GoToMainMenu();
+            FindObjectOfType<LevelManager>().GoToMainMenu();
         }
     }
 }

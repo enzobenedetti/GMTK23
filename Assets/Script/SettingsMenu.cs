@@ -37,7 +37,8 @@ public class OptionMenu : MonoBehaviour
     public void OnVolumeChange(float value)
     {
         print($"volume: {value}");
-        PlayerPrefs.SetFloat(Volume, value); 
+        PlayerPrefs.SetFloat(Volume, value);
+        AudioListener.volume = value;
     }
     
 }

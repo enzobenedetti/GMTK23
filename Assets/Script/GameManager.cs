@@ -22,7 +22,6 @@ namespace Script
 
         public void StartGame()
         {
-            //TODO player can move
             musicManager.PlayMusicWithTagOnScene();
         }
 
@@ -35,7 +34,7 @@ namespace Script
         public void LostGame()
         {
             FindObjectOfType<GameLinkerScript>().lostCanvas.SetActive(true);
-            // musicManager.PlayBaseOnly();
+            musicManager.PlayBaseOnly();
         }
     }
 }
