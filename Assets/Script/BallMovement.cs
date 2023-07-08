@@ -19,10 +19,12 @@ namespace Script
         [SerializeField][Range(0f, 1f)] private float scaleInfluence = 0.5f;
         private bool _onGround = true;
         [SerializeField] private ParticleSystem touchGround;
+        [SerializeField] private AudioSource groundSound;
 
         [SerializeField] private float totalTimeOnPlay;
         private float _actualTime;
         public bool isOnPlay;
+        [SerializeField] private AudioSource ballKicked;
 
         private void Awake()
         {
@@ -34,6 +36,7 @@ namespace Script
             if (Input.GetButtonDown("Jump") && !isOnPlay)
             {
                 isOnPlay = true;
+                ballKicked.Play();
             }
 
             if (isOnPlay && _actualTime <= totalTimeOnPlay)
@@ -51,6 +54,7 @@ namespace Script
                 {
                     _onGround = true;
                     touchGround.Play();
+                    groundSound.PlayOneShot(groundSound.clip);
                     //TODO check if win here
                 }else if (moveZ.Evaluate(_actualTime) > .5f && _onGround)
                 {
