@@ -8,6 +8,10 @@ TagManager:
   - Ball
   - Kart
   - Cat
+  - Water
+  - Sand
+  - Fence
+  - Cactus
   layers:
   - Default
   - TransparentFX

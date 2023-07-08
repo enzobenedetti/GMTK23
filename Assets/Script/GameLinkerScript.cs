@@ -3,32 +3,31 @@ using UnityEngine;
 
 namespace Script
 {
+    /// <summary>
+    /// As the GameManager in scene will be overrided by the one already there,
+    /// This script has the purpose to make the link between the gameManager in DontDestoryOnLoad
+    /// and other Gameobject only in one Scene
+    /// </summary>
     public class GameLinkerScript : MonoBehaviour
     {
-        [HideInInspector]
-        public GameManager gameManager;
-        [HideInInspector]public LevelManager levelManager;
-        
-        
-        private void Start()
-        {
-            gameManager = FindObjectOfType<GameManager>();
-            levelManager = FindObjectOfType<LevelManager>();
-        }
+
+        public GameObject winCanvas;
+        public GameObject lostCanvas;
+        public Animator curtain;
 
         public void CallNextLevel()
         {
-            levelManager.StartNextLevel();
+            FindObjectOfType<LevelManager>().StartNextLevel();
         }
 
         public void CallRestartLevel()
         {
-            levelManager.RestartLevel();
+            FindObjectOfType<LevelManager>().RestartLevel();
         }
 
         public void CallMainMenu()
         {
-            levelManager.GoToMainMenu();
+            FindObjectOfType<LevelManager>().GoToMainMenu();
         }
     }
 }

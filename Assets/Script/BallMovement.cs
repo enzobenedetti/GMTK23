@@ -5,7 +5,6 @@ namespace Script
 {
     public class BallMovement : MonoBehaviour
     {
-        private GameLinkerScript _linkerScript;
         
         [SerializeField]
         private AnimationCurve moveX;
@@ -17,19 +16,16 @@ namespace Script
         private AnimationCurve moveZ;
         [SerializeField] private Transform ballSprite;
         [SerializeField][Range(0f, 1f)] private float scaleInfluence = 0.5f;
-        private bool _onGround = true;
+        [HideInInspector]public bool onGround = true;
         [SerializeField] private ParticleSystem touchGround;
         [SerializeField] private AudioSource groundSound;
 
         [SerializeField] private float totalTimeOnPlay;
         private float _actualTime;
+        private bool _isOnPlay;
+        private bool _gameEnded;
         public bool isOnPlay;
         [SerializeField] private AudioSource ballKicked;
-
-        private void Awake()
-        {
-            _linkerScript = FindObjectOfType<GameLinkerScript>();
-        }
 
         void Update()
         {
@@ -37,6 +33,7 @@ namespace Script
             {
                 isOnPlay = true;
                 ballKicked.Play();
+                FindObjectOfType<GameManager>().StartGame();
             }
 
             if (isOnPlay && _actualTime <= totalTimeOnPlay)
@@ -50,22 +47,23 @@ namespace Script
                 ballSprite.localPosition = Vector3.up * moveZ.Evaluate(_actualTime) + Vector3.up * 0.1f;
                 ballSprite.localScale = Vector3.one * (moveZ.Evaluate(_actualTime) * scaleInfluence + 1f);
 
-                if (moveZ.Evaluate(_actualTime) <= .5f && !_onGround)
+                if (moveZ.Evaluate(_actualTime) <= .5f && !onGround)
                 {
-                    _onGround = true;
+                    onGround = true;
                     touchGround.Play();
                     groundSound.PlayOneShot(groundSound.clip);
                     //TODO check if win here
-                }else if (moveZ.Evaluate(_actualTime) > .5f && _onGround)
+                }else if (moveZ.Evaluate(_actualTime) > .5f && onGround)
                 {
-                    _onGround = false;
+                    onGround = false;
                 }
             }
-            else if(_actualTime > totalTimeOnPlay)
+
+            if (_actualTime >= totalTimeOnPlay && !_gameEnded)
             {
-                Debug.Log(_linkerScript.gameManager);
-                
-                _linkerScript.gameManager.LostGame();
+                isOnPlay = false;
+                _gameEnded = true;
+                FindObjectOfType<GameManager>().LostGame();
             }
         }
     }
