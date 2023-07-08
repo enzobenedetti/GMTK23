@@ -28,15 +28,13 @@ namespace Script
 
         public void WinGame()
         {
-            //TODO show win UI
-            winCanvas.SetActive(true);
+            FindObjectOfType<GameLinkerScript>().winCanvas.SetActive(true);
             // musicManager.PlayBaseOnly();
         }
 
         public void LostGame()
         {
-            //TODO show lost UI
-            lostCanvas.SetActive(true);
+            FindObjectOfType<GameLinkerScript>().lostCanvas.SetActive(true);
             // musicManager.PlayBaseOnly();
         }
     }
