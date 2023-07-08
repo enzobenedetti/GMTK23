@@ -16,7 +16,7 @@ namespace Script
         public void StartNextLevel()
         {
             UpdateLevelsUnlocked();
-            if (SceneManager.GetActiveScene().buildIndex <= SceneManager.sceneCountInBuildSettings)
+            if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings -1)
                 LoadSceneWithAnimation(SceneManager.GetActiveScene().buildIndex + 1);
             else LoadSceneWithAnimation(0);
         }
