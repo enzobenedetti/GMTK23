@@ -32728,6 +32728,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 770767035503579220, guid: db5bd2829e6752549b5a01a14a8e4dbb, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1773988227}
     - target: {fileID: 2946997027619166848, guid: db5bd2829e6752549b5a01a14a8e4dbb, type: 3}
       propertyPath: m_Name
       value: Curtain
@@ -32835,7 +32839,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3764281921999692067, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32701892
+      value: 0.32701916
       objectReference: {fileID: 0}
     - target: {fileID: 3764281921999692067, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32907,7 +32911,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594990228233922956, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32701892
+      value: 0.32701916
       objectReference: {fileID: 0}
     - target: {fileID: 7594990228233922956, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -32970,6 +32974,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
+--- !u!20 &1773988227 stripped
+Camera:
+  m_CorrespondingSourceObject: {fileID: 7957579299855753481, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
+  m_PrefabInstance: {fileID: 1773988226}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5206182320482611781
 PrefabInstance:
   m_ObjectHideFlags: 0

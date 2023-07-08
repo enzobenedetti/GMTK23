@@ -27,7 +27,7 @@ namespace Script
 
         public void CallNextLevel()
         {
-            levelManager.StartNextLevel();
+            FindObjectOfType<LevelManager>().StartNextLevel();
         }
 
         public void CallRestartLevel()
