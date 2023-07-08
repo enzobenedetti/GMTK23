@@ -38,7 +38,7 @@ namespace Script
 
         private void LoadSceneWithAnimation(int index)
         {
-            curtainAnimator.SetTrigger(Close);
+            FindObjectOfType<GameLinkerScript>().curtain.SetTrigger(Close);
             StartCoroutine(LoadSceneWithDelay(index, animationDelay));
         }
 

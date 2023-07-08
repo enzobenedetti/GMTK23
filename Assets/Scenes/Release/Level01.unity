@@ -32631,6 +32631,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameManager: {fileID: 0}
   levelManager: {fileID: 0}
+  winCanvas: {fileID: 1429091641}
+  lostCanvas: {fileID: 895038256}
+  curtain: {fileID: 949806719}
+--- !u!1 &895038256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3076985986956269089, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
+  m_PrefabInstance: {fileID: 5206182320482611781}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &910384669
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32701,6 +32709,16 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2706073396606619381, guid: 642cc41bfd431914287d94e3cac9b420, type: 3}
   m_PrefabInstance: {fileID: 910384669}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &949806719 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 8369515700981886740, guid: db5bd2829e6752549b5a01a14a8e4dbb, type: 3}
+  m_PrefabInstance: {fileID: 1659922227}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1429091641 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8567116310232803877, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
+  m_PrefabInstance: {fileID: 5206182320482611781}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1659922227
 PrefabInstance:

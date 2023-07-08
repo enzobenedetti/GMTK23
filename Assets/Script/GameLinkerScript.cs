@@ -16,6 +16,7 @@ namespace Script
 
         public GameObject winCanvas;
         public GameObject lostCanvas;
+        public Animator curtain;
         
         
         private void Start()
