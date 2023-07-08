@@ -9,9 +9,14 @@ namespace Script
         {
             if (FindObjectsByType<GameManager>(FindObjectsSortMode.None).Length > 1)
             {
-                Destroy(transform);
+                Destroy(gameObject);
             }
             DontDestroyOnLoad(transform);
+        }
+
+        private void Start()
+        {
+            Debug.Log("Start on Game Manager");
         }
 
         public void WinGame()
