@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 658862868793103198}
   m_Layer: 0
   m_Name: Ball
-  m_TagString: Untagged
+  m_TagString: Ball
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -176,6 +176,7 @@ MonoBehaviour:
   scaleInfluence: 0.5
   touchGround: {fileID: 7834505742420321395}
   totalTimeOnPlay: 3
+  isOnPlay: 0
 --- !u!58 &658862868793103198
 CircleCollider2D:
   m_ObjectHideFlags: 0

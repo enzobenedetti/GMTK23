@@ -5,6 +5,8 @@ namespace Script
 {
     public class BallMovement : MonoBehaviour
     {
+        private GameLinkerScript _linkerScript;
+        
         [SerializeField]
         private AnimationCurve moveX;
         [SerializeField]
@@ -20,16 +22,21 @@ namespace Script
 
         [SerializeField] private float totalTimeOnPlay;
         private float _actualTime;
-        private bool _isOnPlay;
+        public bool isOnPlay;
+
+        private void Awake()
+        {
+            _linkerScript = FindObjectOfType<GameLinkerScript>();
+        }
 
         void Update()
         {
-            if (Input.GetButtonDown("Jump") && !_isOnPlay)
+            if (Input.GetButtonDown("Jump") && !isOnPlay)
             {
-                _isOnPlay = true;
+                isOnPlay = true;
             }
 
-            if (_isOnPlay && _actualTime <= totalTimeOnPlay)
+            if (isOnPlay && _actualTime <= totalTimeOnPlay)
             {
                 _actualTime += Time.deltaTime;
                 
@@ -49,6 +56,12 @@ namespace Script
                 {
                     _onGround = false;
                 }
+            }
+            else if(_actualTime > totalTimeOnPlay)
+            {
+                Debug.Log(_linkerScript.gameManager);
+                
+                _linkerScript.gameManager.LostGame();
             }
         }
     }

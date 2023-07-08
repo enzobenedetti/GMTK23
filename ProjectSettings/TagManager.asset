@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Wood
   - Ball
+  - Kart
+  - Cat
   layers:
   - Default
   - TransparentFX
