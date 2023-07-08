@@ -5,7 +5,8 @@ namespace Script
 {
     public class GameLinkerScript : MonoBehaviour
     {
-        [HideInInspector]public GameManager gameManager;
+        [HideInInspector]
+        public GameManager gameManager;
         [HideInInspector]public LevelManager levelManager;
         
         

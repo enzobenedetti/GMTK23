@@ -14,6 +14,7 @@ namespace Script
                 Destroy(gameObject);
             }
             DontDestroyOnLoad(transform);
+            if (!musicManager) musicManager = GetComponent<MusicManager>();
         }
 
         public void StartGame()
