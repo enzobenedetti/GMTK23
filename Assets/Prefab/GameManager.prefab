@@ -178,6 +178,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5785372d1e698d74899a8ef2bf174638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  curtainAnimator: {fileID: 0}
+  animationDelay: 0
 --- !u!114 &7463518878219266259
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,6 +193,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   musicManager: {fileID: 0}
+  winCanvas: {fileID: 0}
+  lostCanvas: {fileID: 0}
 --- !u!114 &1383548044207680638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,7 +254,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: ba08989aaff911a4889ec1d5749aea2c, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1

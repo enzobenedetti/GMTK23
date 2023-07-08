@@ -23,6 +23,8 @@ public class Hole : MonoBehaviour
 
     private void Update()
     {
+        if (!FindObjectOfType<BallMovement>()) return;
+        if (!FindObjectOfType<BallMovement>().isOnPlay) return;
         if (movementHorizontal)
         {
             _moveDir.x = Input.GetAxisRaw("Horizontal");
@@ -36,6 +38,7 @@ public class Hole : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (!FindObjectOfType<BallMovement>()) return;
         _rigidbody2D.MovePosition(_rigidbody2D.position + _moveDir.normalized * (speed * Time.fixedDeltaTime));
     }
 
@@ -44,6 +47,7 @@ public class Hole : MonoBehaviour
         if (other.gameObject.CompareTag("Ball"))
         {
             other.gameObject.SetActive(false);
+            GetComponentInChildren<ParticleSystem>().Play();
             _gameManager.WinGame();
         }
     }
