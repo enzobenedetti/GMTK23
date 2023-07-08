@@ -15,7 +15,8 @@ namespace Script
         private AnimationCurve moveZ;
         [SerializeField] private Transform ballSprite;
         [SerializeField][Range(0f, 1f)] private float scaleInfluence = 0.5f;
-        private bool _onGround;
+        private bool _onGround = true;
+        [SerializeField] private ParticleSystem touchGround;
 
         [SerializeField] private float totalTimeOnPlay;
         private float _actualTime;
@@ -42,7 +43,11 @@ namespace Script
                 if (moveZ.Evaluate(_actualTime) <= .5f && !_onGround)
                 {
                     _onGround = true;
-                    //TODO Play particle touch ground and check if win here
+                    touchGround.Play();
+                    //TODO check if win here
+                }else if (moveZ.Evaluate(_actualTime) > .5f && _onGround)
+                {
+                    _onGround = false;
                 }
             }
         }
