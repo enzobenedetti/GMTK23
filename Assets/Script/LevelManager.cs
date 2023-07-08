@@ -6,7 +6,7 @@ namespace Script
     public class LevelManager : MonoBehaviour
     {
         /// <summary>
-        /// Load a level, you can also reload a level from here
+        /// Load the next level
         /// </summary>
         public void StartNextLevel()
         {

@@ -5,6 +5,8 @@ namespace Script
 {
     public class GameManager : MonoBehaviour
     {
+        [SerializeField] private MusicManager musicManager;
+        
         private void Awake()
         {
             if (FindObjectsByType<GameManager>(FindObjectsSortMode.None).Length > 1)
@@ -14,19 +16,22 @@ namespace Script
             DontDestroyOnLoad(transform);
         }
 
-        private void Start()
+        public void StartGame()
         {
-            Debug.Log("Start on Game Manager");
+            //TODO player can move
+            musicManager.PlayMusicWithTagOnScene();
         }
 
         public void WinGame()
         {
             //TODO show win UI
+            musicManager.PlayBaseOnly();
         }
 
         public void LostGame()
         {
             //TODO show lost UI
+            musicManager.PlayBaseOnly();
         }
     }
 }
