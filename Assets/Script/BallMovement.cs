@@ -21,6 +21,7 @@ namespace Script
         [SerializeField] private float totalTimeOnPlay;
         private float _actualTime;
         private bool _isOnPlay;
+        private bool _gameEnded;
 
         void Update()
         {
@@ -49,6 +50,12 @@ namespace Script
                 {
                     _onGround = false;
                 }
+            }
+
+            if (_actualTime >= totalTimeOnPlay && !_gameEnded)
+            {
+                _gameEnded = true;
+                FindObjectOfType<GameManager>().LostGame();
             }
         }
     }
