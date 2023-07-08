@@ -20,16 +20,16 @@ namespace Script
 
         [SerializeField] private float totalTimeOnPlay;
         private float _actualTime;
-        private bool _isOnPlay;
+        public bool isOnPlay;
 
         void Update()
         {
-            if (Input.GetButtonDown("Jump") && !_isOnPlay)
+            if (Input.GetButtonDown("Jump") && !isOnPlay)
             {
-                _isOnPlay = true;
+                isOnPlay = true;
             }
 
-            if (_isOnPlay && _actualTime <= totalTimeOnPlay)
+            if (isOnPlay && _actualTime <= totalTimeOnPlay)
             {
                 _actualTime += Time.deltaTime;
                 
