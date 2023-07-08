@@ -2,34 +2,50 @@ using System;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+namespace Script {
+public class Hole : MonoBehaviour
 {
     [SerializeField] private bool movementHorizontal;
 
     [SerializeField] private bool movementVertical;
     [SerializeField] private float speed = 1.2f;
+    
+    private Rigidbody2D _rigidbody2D;
+    private Vector2 _moveDir = Vector2.zero;
+    private GameManager _gameManager;
+
+    private void Awake()
+    {
+        _rigidbody2D = GetComponent<Rigidbody2D>();
+        _gameManager = FindObjectOfType<GameManager>();
+    }
+
 
     private void Update()
     {
-        var moveDir = Vector2.zero;
         if (movementHorizontal)
         {
-            moveDir.x = Input.GetAxisRaw("Horizontal");
+            _moveDir.x = Input.GetAxisRaw("Horizontal");
         }
 
         if (movementVertical)
         {
-            moveDir.y = Input.GetAxisRaw("Vertical");
+            _moveDir.y = Input.GetAxisRaw("Vertical");
         }
-        
-        transform.Translate(moveDir.normalized * (speed * Time.deltaTime));
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
+    private void FixedUpdate()
     {
-        if (other.CompareTag("Ball"))
+        _rigidbody2D.MovePosition(_rigidbody2D.position + _moveDir.normalized * (speed * Time.fixedDeltaTime));
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.CompareTag("Ball"))
         {
-            print("Point Scored");
+            other.gameObject.SetActive(false);
+            _gameManager.WinGame();
         }
     }
+}
 }
