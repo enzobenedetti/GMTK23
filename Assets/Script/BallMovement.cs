@@ -5,7 +5,6 @@ namespace Script
 {
     public class BallMovement : MonoBehaviour
     {
-        private GameLinkerScript _linkerScript;
         
         [SerializeField]
         private AnimationCurve moveX;
@@ -23,13 +22,10 @@ namespace Script
 
         [SerializeField] private float totalTimeOnPlay;
         private float _actualTime;
+        private bool _isOnPlay;
+        private bool _gameEnded;
         public bool isOnPlay;
         [SerializeField] private AudioSource ballKicked;
-
-        private void Awake()
-        {
-            _linkerScript = FindObjectOfType<GameLinkerScript>();
-        }
 
         void Update()
         {
@@ -61,11 +57,11 @@ namespace Script
                     _onGround = false;
                 }
             }
-            else if(_actualTime > totalTimeOnPlay)
+
+            if (_actualTime >= totalTimeOnPlay && !_gameEnded)
             {
-                Debug.Log(_linkerScript.gameManager);
-                
-                _linkerScript.gameManager.LostGame();
+                _gameEnded = true;
+                FindObjectOfType<GameManager>().LostGame();
             }
         }
     }
