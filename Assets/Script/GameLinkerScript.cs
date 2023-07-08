@@ -14,5 +14,20 @@ namespace Script
             gameManager = FindObjectOfType<GameManager>();
             levelManager = FindObjectOfType<LevelManager>();
         }
+
+        public void CallNextLevel()
+        {
+            levelManager.StartNextLevel();
+        }
+
+        public void CallRestartLevel()
+        {
+            levelManager.RestartLevel();
+        }
+
+        public void CallMainMenu()
+        {
+            levelManager.GoToMainMenu();
+        }
     }
 }
