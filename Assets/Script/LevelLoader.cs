@@ -19,6 +19,7 @@ namespace Script
         public float horizontalSpacing;
         public float verticalSpacing;
         public GameLinkerScript gameLinkerScript;
+        [SerializeField] private AudioSource click;
         
 
         private List<Button> levelButtons = new List<Button>();
@@ -67,6 +68,7 @@ namespace Script
 
         private void LoadLevel(int level)
         {
+            click.Play();
             if (level <= _maxUnlockedLevel)
             {
                 gameLinkerScript.LoadLevel(level);

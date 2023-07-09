@@ -450,7 +450,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 699235470852825122, guid: 5c7fa3d5232abb647ba39c0eede0158c, type: 3}
       propertyPath: moveZ.m_Curve.Array.data[3].time
-      value: 10.043139
+      value: 9.981399
       objectReference: {fileID: 0}
     - target: {fileID: 699235470852825122, guid: 5c7fa3d5232abb647ba39c0eede0158c, type: 3}
       propertyPath: moveZ.m_Curve.Array.data[4].time

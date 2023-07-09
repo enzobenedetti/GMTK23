@@ -22,6 +22,7 @@ public class Hole : MonoBehaviour
     [SerializeField] private Sprite right;
     [SerializeField] private Sprite up;
     [SerializeField] private Sprite down;
+    [SerializeField] private SpriteRenderer shadow;
 
     [SerializeField] private GameObject arrowTuto;
 
@@ -66,7 +67,8 @@ public class Hole : MonoBehaviour
             GetComponent<SpriteRenderer>().sprite = up;
         else if (_moveDir.y < 0f)
             GetComponent<SpriteRenderer>().sprite = down;
-        
+
+        shadow.sprite = GetComponent<SpriteRenderer>().sprite;
     }
 
     private void FixedUpdate()

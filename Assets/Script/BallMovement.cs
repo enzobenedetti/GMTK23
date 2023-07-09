@@ -1,4 +1,5 @@
 using System;
+using DG.Tweening;
 using UnityEngine;
 
 namespace Script
@@ -63,7 +64,7 @@ namespace Script
                     onGround = true;
                     touchGround.Play();
                     groundSound.PlayOneShot(groundSound.clip);
-                    //TODO check if win here
+                    ballSprite.DOShakeScale(0.13f);
                 }else if (moveZ.Evaluate(_actualTime) > .3f && onGround)
                 {
                     onGround = false;
