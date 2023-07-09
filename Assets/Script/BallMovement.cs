@@ -23,6 +23,7 @@ namespace Script
         [SerializeField] private float totalTimeOnPlay;
         private float _actualTime;
         private bool _isOnPlay;
+        [SerializeField] private bool inWaterAtTheEnd;
         private bool _gameEnded;
         public bool isOnPlay;
         [SerializeField] private AudioSource ballKicked;
@@ -62,6 +63,12 @@ namespace Script
             if (_actualTime >= totalTimeOnPlay && !_gameEnded)
             {
                 isOnPlay = false;
+                if (inWaterAtTheEnd)
+                {
+                    GetComponent<SpriteRenderer>().enabled = false;
+                    ballSprite.GetComponent<SpriteRenderer>().enabled = false;
+                    //TODO Play water particle
+                }
                 _gameEnded = true;
                 FindObjectOfType<GameManager>().LostGame();
             }
