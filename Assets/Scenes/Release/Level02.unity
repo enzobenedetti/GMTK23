@@ -47496,6 +47496,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1584322513}
+    - target: {fileID: 770767035503579220, guid: db5bd2829e6752549b5a01a14a8e4dbb, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 424752329
+      objectReference: {fileID: 0}
     - target: {fileID: 2946997027619166848, guid: db5bd2829e6752549b5a01a14a8e4dbb, type: 3}
       propertyPath: m_Name
       value: Curtain
@@ -47608,7 +47612,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3764281921999692067, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32701892
+      value: 0.32701916
       objectReference: {fileID: 0}
     - target: {fileID: 3764281921999692067, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -47676,7 +47680,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7594990228233922956, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.32701892
+      value: 0.32701916
       objectReference: {fileID: 0}
     - target: {fileID: 7594990228233922956, guid: ad0fdebd6d65c4d4e944af16e975a64b, type: 3}
       propertyPath: m_LocalPosition.z
@@ -47724,6 +47728,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1584322513}
+    - target: {fileID: 2126283860174329068, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 424752329
+      objectReference: {fileID: 0}
     - target: {fileID: 2194472725929347724, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 

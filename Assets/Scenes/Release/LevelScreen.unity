@@ -666,11 +666,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 1677372672}
-  levelButton: {fileID: 1342166230948551851, guid: e979b824801fa4d4db2bd85c126ab0e5, type: 3}
   activeLevelButton: {fileID: 1342166230948551851, guid: e979b824801fa4d4db2bd85c126ab0e5, type: 3}
   inactiveLevelButton: {fileID: 7789207161367618467, guid: 34d2a376120128340a2f4ac6ea268a1d, type: 3}
-  activeColor: {r: 0.21208172, g: 0.16035953, b: 0.7264151, a: 1}
-  inactiveColor: {r: 0.735849, g: 0.17632605, b: 0.17632605, a: 1}
   numberOfLevels: 10
   topLeft: {x: -700, y: 280}
   bottomRight: {x: 700, y: 280}
@@ -935,6 +932,18 @@ MonoBehaviour:
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6314546576896283540}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: PlayOneShot
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 8300000, guid: 8cc2994869794704598fd07ae974412b, type: 3}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.AudioClip, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: 
@@ -2352,6 +2361,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3099f6b77f908eb4d8a609cad872daee, type: 3}
+--- !u!82 &6314546576896283540 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 2630339830243864308, guid: 3099f6b77f908eb4d8a609cad872daee, type: 3}
+  m_PrefabInstance: {fileID: 6314546576896283539}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6323272979615525239
 PrefabInstance:
   m_ObjectHideFlags: 0
