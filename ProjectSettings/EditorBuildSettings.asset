@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Release/MainMenu.unity
     guid: 0dced2275a1dddb4da121a41c7e793a4
   - enabled: 1
+    path: Assets/Scenes/Release/LevelScreen.unity
+    guid: 7600ee81fe8fb024c9c520eb03a91bb3
+  - enabled: 1
     path: Assets/Scenes/Release/Level01.unity
     guid: f844fbdf47870474ea2e9c19b4846b37
   - enabled: 1
@@ -35,4 +38,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Release/Level09.unity
     guid: cf37c603a5311a645acc2905ca2759e8
+  - enabled: 1
+    path: Assets/Scenes/Release/Level10.unity
+    guid: aec3ec8a92dc8ce4ba0f4f182fb640b9
   m_configObjects: {}

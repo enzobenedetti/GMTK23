@@ -28,12 +28,16 @@ namespace Script
         public bool isOnPlay;
         [SerializeField] private AudioSource ballKicked;
 
+        [SerializeField] private Transform character;
+
         void Update()
         {
             if (Input.GetButtonDown("Jump") && !isOnPlay)
             {
                 isOnPlay = true;
                 ballKicked.Play();
+                character.GetComponent<Animator>().SetTrigger("Shoot");
+                character.parent = null;
                 FindObjectOfType<GameManager>().StartGame();
             }
 
