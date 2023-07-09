@@ -12,6 +12,9 @@ TagManager:
   - Sand
   - Fence
   - Cactus
+  - Bird
+  - Snow
+  - SnowMan
   layers:
   - Default
   - TransparentFX
