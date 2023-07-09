@@ -33118,10 +33118,18 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 663858217}
+    - target: {fileID: 2126283860174329068, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1773988227}
     - target: {fileID: 2194472725929347724, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 663858217}
+    - target: {fileID: 3076985986956269089, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3126735601090067222, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
       propertyPath: m_Pivot.x
       value: 0
@@ -33217,6 +33225,10 @@ PrefabInstance:
     - target: {fileID: 8451467273705193418, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
       propertyPath: m_Name
       value: LevelCanvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 8567116310232803877, guid: 2ea77e1edf4957d40a71f7404918f6c5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -19,6 +19,11 @@ namespace Script
         {
             FindObjectOfType<LevelManager>().StartNextLevel();
         }
+        
+        public void LoadLevel(int index)
+        {
+            FindObjectOfType<LevelManager>().LoadLevel(index);
+        }
 
         public void CallRestartLevel()
         {
@@ -28,6 +33,11 @@ namespace Script
         public void CallMainMenu()
         {
             FindObjectOfType<LevelManager>().GoToMainMenu();
+        }
+
+        public void CallLevelsMenu()
+        {
+            FindObjectOfType<LevelManager>().GoToLevelsMenu();
         }
     }
 }
