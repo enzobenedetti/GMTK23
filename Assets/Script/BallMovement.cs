@@ -78,7 +78,7 @@ namespace Script
                 {
                     GetComponent<SpriteRenderer>().enabled = false;
                     ballSprite.GetComponent<SpriteRenderer>().enabled = false;
-                    //TODO Play water particle
+                    water.Play();
                     plouf.Play();
                 }
                 _gameEnded = true;
