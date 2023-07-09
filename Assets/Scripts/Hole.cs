@@ -17,6 +17,12 @@ public class Hole : MonoBehaviour
     private Vector2 _moveDir = Vector2.zero;
     private GameManager _gameManager;
 
+    [SerializeField] private Sprite idle;
+    [SerializeField] private Sprite left;
+    [SerializeField] private Sprite right;
+    [SerializeField] private Sprite up;
+    [SerializeField] private Sprite down;
+
     [SerializeField] private GameObject arrowTuto;
 
     private void Awake()
@@ -39,11 +45,28 @@ public class Hole : MonoBehaviour
         {
             _moveDir.y = Input.GetAxisRaw("Vertical");
         }
+        
+        AnimateFlag();
 
         if (arrowTuto && _moveDir != Vector2.zero)
         {
             arrowTuto.SetActive(false);
         }
+    }
+
+    private void AnimateFlag()
+    {
+        if (_moveDir == Vector2.zero)
+            GetComponent<SpriteRenderer>().sprite = idle;
+        else if (_moveDir.x > 0f)
+            GetComponent<SpriteRenderer>().sprite = right;
+        else if (_moveDir.x < 0f)
+            GetComponent<SpriteRenderer>().sprite = left;
+        else if (_moveDir.y > 0f)
+            GetComponent<SpriteRenderer>().sprite = up;
+        else if (_moveDir.y < 0f)
+            GetComponent<SpriteRenderer>().sprite = down;
+        
     }
 
     private void FixedUpdate()
