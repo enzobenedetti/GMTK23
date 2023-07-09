@@ -12,6 +12,7 @@ TagManager:
   - Sand
   - Fence
   - Cactus
+  - Bird
   layers:
   - Default
   - TransparentFX

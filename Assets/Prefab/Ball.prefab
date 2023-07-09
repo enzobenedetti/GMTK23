@@ -177,6 +177,7 @@ MonoBehaviour:
     m_RotationOrder: 4
   ballSprite: {fileID: 493637990126553967}
   scaleInfluence: 0.5
+  heightInfluence: 3.5
   onGround: 1
   touchGround: {fileID: 7834505742420321395}
   groundSound: {fileID: 5743070618546823057}

@@ -48,18 +48,17 @@ namespace Script
                 
                 //Update ball position
                 transform.position = new Vector3(moveX.Evaluate(_actualTime), moveY.Evaluate(_actualTime), 0);
-                Debug.Log(moveX.Evaluate(_actualTime));
-                
+
                 ballSprite.localPosition = Vector3.up * moveZ.Evaluate(_actualTime) * heightInfluence + Vector3.up * 0.1f;
                 ballSprite.localScale = Vector3.one * (moveZ.Evaluate(_actualTime) * scaleInfluence + 1f);
 
-                if (moveZ.Evaluate(_actualTime) <= .5f && !onGround)
+                if (moveZ.Evaluate(_actualTime) <= .3f && !onGround)
                 {
                     onGround = true;
                     touchGround.Play();
                     groundSound.PlayOneShot(groundSound.clip);
                     //TODO check if win here
-                }else if (moveZ.Evaluate(_actualTime) > .5f && onGround)
+                }else if (moveZ.Evaluate(_actualTime) > .3f && onGround)
                 {
                     onGround = false;
                 }
