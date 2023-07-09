@@ -16,6 +16,7 @@ namespace Script
         private AnimationCurve moveZ;
         [SerializeField] private Transform ballSprite;
         [SerializeField][Range(0f, 1f)] private float scaleInfluence = 0.5f;
+        [SerializeField] private float heightInfluence = 2f;
         [HideInInspector]public bool onGround = true;
         [SerializeField] private ParticleSystem touchGround;
         [SerializeField] private AudioSource groundSound;
@@ -49,7 +50,7 @@ namespace Script
                 transform.position = new Vector3(moveX.Evaluate(_actualTime), moveY.Evaluate(_actualTime), 0);
                 Debug.Log(moveX.Evaluate(_actualTime));
                 
-                ballSprite.localPosition = Vector3.up * moveZ.Evaluate(_actualTime) + Vector3.up * 0.1f;
+                ballSprite.localPosition = Vector3.up * moveZ.Evaluate(_actualTime) * heightInfluence + Vector3.up * 0.1f;
                 ballSprite.localScale = Vector3.one * (moveZ.Evaluate(_actualTime) * scaleInfluence + 1f);
 
                 if (moveZ.Evaluate(_actualTime) <= .5f && !onGround)
