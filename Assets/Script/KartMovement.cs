@@ -10,6 +10,7 @@ namespace Script
         private void Update()
         {
             if (!_spriteRenderer) _spriteRenderer = GetComponent<SpriteRenderer>();
+            
             if (FindObjectOfType<BallMovement>().isOnPlay)
             {
                 transform.position += (!_spriteRenderer.flipX ? Vector3.left : Vector3.right) * speed * Time.deltaTime;
