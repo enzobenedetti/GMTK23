@@ -11,14 +11,13 @@ namespace Script
         private static readonly int Close = Animator.StringToHash("Close");
 
         public const string LevelsDone = "LevelsDone";
-        public const int LevelsStartIndexOffset = 1; // Accounts for the main menu(0) and levels menu(1) scene
+        public const int LevelsStartIndexOffset = 0; // Accounts for the main menu(0) and levels menu(1) scene
 
         /// <summary>
         /// Load the next level
         /// </summary>
         public void StartNextLevel()
         {
-            UpdateLevelsUnlocked();
             if (SceneManager.GetActiveScene().buildIndex < SceneManager.sceneCountInBuildSettings -1)
                 LoadSceneWithAnimation(SceneManager.GetActiveScene().buildIndex + 1);
             else LoadSceneWithAnimation(0);
@@ -41,12 +40,13 @@ namespace Script
 
         public void GoToLevelsMenu()
         {
-            LoadSceneWithAnimation(1);
+            LoadSceneWithAnimation(14);
         }
 
-        private void UpdateLevelsUnlocked()
+        public void UpdateLevelsUnlocked()
         {
-            PlayerPrefs.SetInt(LevelsDone, SceneManager.GetActiveScene().buildIndex);
+            if (SceneManager.GetActiveScene().buildIndex > PlayerPrefs.GetInt(LevelsDone))
+                PlayerPrefs.SetInt(LevelsDone, SceneManager.GetActiveScene().buildIndex);
         }
 
         private void LoadSceneWithAnimation(int index)
