@@ -17,6 +17,8 @@ public class Hole : MonoBehaviour
     private Vector2 _moveDir = Vector2.zero;
     private GameManager _gameManager;
 
+    [SerializeField] private GameObject arrowTuto;
+
     private void Awake()
     {
         _rigidbody2D = GetComponent<Rigidbody2D>();
@@ -36,6 +38,11 @@ public class Hole : MonoBehaviour
         if (movementVertical)
         {
             _moveDir.y = Input.GetAxisRaw("Vertical");
+        }
+
+        if (arrowTuto && _moveDir != Vector2.zero)
+        {
+            arrowTuto.SetActive(false);
         }
     }
 

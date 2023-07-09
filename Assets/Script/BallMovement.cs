@@ -30,6 +30,8 @@ namespace Script
         [SerializeField] private AudioSource ballKicked;
 
         [SerializeField] private Transform character;
+        
+        [SerializeField] private GameObject spaceTuto;
 
         void Update()
         {
@@ -40,6 +42,7 @@ namespace Script
                 character.GetComponent<Animator>().SetTrigger("Shoot");
                 character.parent = null;
                 FindObjectOfType<GameManager>().StartGame();
+                if (spaceTuto) spaceTuto.SetActive(false);
             }
 
             if (isOnPlay && _actualTime <= totalTimeOnPlay)

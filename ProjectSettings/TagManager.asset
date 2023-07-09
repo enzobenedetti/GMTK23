@@ -13,6 +13,7 @@ TagManager:
   - Fence
   - Cactus
   - Bird
+  - Tuto
   layers:
   - Default
   - TransparentFX
