@@ -13,7 +13,8 @@ TagManager:
   - Fence
   - Cactus
   - Bird
-  - Tuto
+  - Snow
+  - SnowMan
   layers:
   - Default
   - TransparentFX

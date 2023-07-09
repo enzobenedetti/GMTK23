@@ -20,6 +20,9 @@ namespace Script
         [HideInInspector]public bool onGround = true;
         [SerializeField] private ParticleSystem touchGround;
         [SerializeField] private AudioSource groundSound;
+        [SerializeField] private AudioSource plouf;
+        [SerializeField] private ParticleSystem water;
+        [SerializeField] private AudioSource loseCrowd;
 
         [SerializeField] private float totalTimeOnPlay;
         private float _actualTime;
@@ -70,11 +73,13 @@ namespace Script
             if (_actualTime >= totalTimeOnPlay && !_gameEnded)
             {
                 isOnPlay = false;
+                loseCrowd.Play();
                 if (inWaterAtTheEnd)
                 {
                     GetComponent<SpriteRenderer>().enabled = false;
                     ballSprite.GetComponent<SpriteRenderer>().enabled = false;
                     //TODO Play water particle
+                    plouf.Play();
                 }
                 _gameEnded = true;
                 FindObjectOfType<GameManager>().LostGame();
