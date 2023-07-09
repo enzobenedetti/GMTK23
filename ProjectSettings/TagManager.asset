@@ -12,6 +12,9 @@ TagManager:
   - Sand
   - Fence
   - Cactus
+  - Bird
+  - Snow
+  - SnowMan
   layers:
   - Default
   - TransparentFX
@@ -48,4 +51,7 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 424752329
     locked: 0

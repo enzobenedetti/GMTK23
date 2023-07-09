@@ -29,6 +29,7 @@ namespace Script
 
         public void Awake()
         {
+            numberOfLevels = SceneManager.sceneCountInBuildSettings - 2;
             _maxUnlockedLevel = PlayerPrefs.GetInt(LevelManager.LevelsDone, 1);
             GenerateLevelCards();
             print(_maxUnlockedLevel);

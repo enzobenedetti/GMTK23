@@ -28,6 +28,7 @@ namespace Script
         public void WinGame()
         {
             FindObjectOfType<GameLinkerScript>().winCanvas.SetActive(true);
+            FindObjectOfType<LevelManager>().UpdateLevelsUnlocked();
             // musicManager.PlayBaseOnly();
         }
 
