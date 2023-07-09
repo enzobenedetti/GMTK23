@@ -9,6 +9,9 @@ public class Hole : MonoBehaviour
 
     [SerializeField] private bool movementVertical;
     [SerializeField] private float speed = 1.2f;
+
+    [SerializeField] private AudioSource clap;
+    [SerializeField] private AudioSource ballInHole;
     
     private Rigidbody2D _rigidbody2D;
     private Vector2 _moveDir = Vector2.zero;
@@ -49,6 +52,8 @@ public class Hole : MonoBehaviour
         {
             if (!other.transform.GetComponent<BallMovement>().onGround) return;
             other.gameObject.SetActive(false);
+            clap.Play();
+            ballInHole.Play();
             GetComponentInChildren<ParticleSystem>().Play();
             _gameManager.WinGame();
         }
